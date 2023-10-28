@@ -12,11 +12,6 @@ def translate(text, lang_from="auto", lang_to="es"):
     # Obtiene el idioma de origen del texto
     lang_from = LANGUAGES.get(lang_from, "auto")
 
-    # Si no se especifica el idioma de destino, lo pide al usuario
-    if lang_to is None:
-        lang_to = input('¿A qué idioma quieres traducir? (nombre del idioma) ')
-        lang_to = LANGUAGES.get(lang_to.lower(), "es")
-
     # Abre Google Translate con los idiomas especificados
     driver.get(f'https://translate.google.com/?hl=en&tab=TT&sl={lang_from}&tl={lang_to}&op=translate')
 
